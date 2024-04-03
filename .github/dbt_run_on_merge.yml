@@ -6,22 +6,21 @@ ok,name: run dbt Cloud job on push
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
-
   # the job calls the dbt Cloud API to run a job
   run_dbt_cloud_job:
     name: Run dbt Cloud Job
     runs-on: ubuntu-latest
 
-  # Set the environment variables needed for the run
+    # Set the environment variables needed for the run
     env:
       DBT_ACCOUNT_ID: 252571 # enter your account id
       DBT_PROJECT_ID: 364562 # enter your project id
-      DBT_PR_JOB_ID:  308260 # enter your job id
+      DBT_PR_JOB_ID: 308260 # enter your job id
       DBT_API_KEY: ${{ secrets.DBT_API_KEY }}
-      DBT_JOB_CAUSE: 'GitHub Pipeline CI Job' 
+      DBT_JOB_CAUSE: "GitHub Pipeline CI Job"
       DBT_JOB_BRANCH: ${{ github.ref_name }}
 
     steps:

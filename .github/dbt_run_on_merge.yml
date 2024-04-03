@@ -1,4 +1,4 @@
-name: run dbt Cloud job on push
+ok,name: run dbt Cloud job on push
 
 # This filter says only run this job when there is a push to the main branch
 # This works off the assumption that you've restricted this branch to only all PRs to push to the default branch
